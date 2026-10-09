@@ -5,6 +5,8 @@ Site de apresentação para compartilhamento com o cliente.
 ## Arquivos
 
 - `index.html`: versão completa v2, com fotos reais, galeria, eventos, fontes e scripts incorporados.
+- Layout responsivo para celular e tablet, menu hambúrguer acessível e galerias com rolagem por toque.
+- `mobile-preview.html`: prévia para conferir o site em larguras de 320, 390, 768 e 1280 px.
 - `.nojekyll`: mantém a publicação como site estático.
 
 ## GitHub Pages

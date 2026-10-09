@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="pt-BR">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prévia em celular · O Que Deu Tempo Fazer</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #dfe6eb; color: #10232c; font: 14px system-ui, sans-serif; }
+  header { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 10px; padding: 14px; background: white; }
+  button, header a { cursor: pointer; padding: 9px 13px; background: #eef3f5; color: #10232c; border: 1px solid #a5bac7; border-radius: 8px; font: inherit; text-decoration: none; }
+  button[aria-pressed="true"] { background: #10232c; color: white; }
+  main { display: flex; justify-content: center; padding: 16px; }
+  iframe { box-sizing: content-box; border: 0; width: 390px; height: 844px; background: #08161f; box-shadow: 0 8px 32px #10232c30; }
+</style>
+<header><strong>Prévia do site · largura:</strong>
+  <button type="button" aria-pressed="false" data-width="320">320 px</button>
+  <button type="button" aria-pressed="true" data-width="390">390 px</button>
+  <button type="button" aria-pressed="false" data-width="768">768 px</button>
+  <button type="button" aria-pressed="false" data-width="1280">1280 px</button>
+  <a href="./">Abrir site</a>
+</header>
+<main><iframe id="device-preview" title="Site O Que Deu Tempo Fazer" src="./"></iframe></main>
+<script>
+  for (const button of document.querySelectorAll('[data-width]')) {
+    button.addEventListener('click', () => {
+      document.querySelector('#device-preview').style.width = button.dataset.width + 'px';
+      for (const other of document.querySelectorAll('[data-width]')) other.setAttribute('aria-pressed', String(other === button));
+    });
+  }
+</script>
+</html>
